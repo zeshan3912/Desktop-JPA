@@ -16,7 +16,7 @@ public class App {
         entityManagerFactory = Persistence.createEntityManagerFactory("example");
         entityManager = entityManagerFactory.createEntityManager();
         App app = new App();
-        app.baseOperations();
+        //app.baseOperations();
         app.basicJPQL();
 
         app.nativeQuery();
@@ -34,11 +34,13 @@ public class App {
 
         //Query query=entityManager.createNamedQuery("user.getAll");
 
-        TypedQuery<User> query = entityManager.createNamedQuery("user.getAll", User.class);
+        // TypedQuery<User> query = entityManager.createNamedQuery("user.getAll", User.class);
 
+        TypedQuery<User> query = entityManager.createNamedQuery("user.getUserById", User.class);
+        query.setParameter("id", 1L);
         //List<User> users=(List<User>)query.getResultList();
         List<User> users = query.getResultList();
-        System.out.println("named Query  " + users);
+        System.out.println("\nnamed Query  " + users);
 
     }
 

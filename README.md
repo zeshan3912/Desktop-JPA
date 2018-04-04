@@ -30,6 +30,28 @@ for Relation ship b/w tables we use three annotations
 with Entity class we can generate tables in DB
 
 
+JPA Inheritance:
+
+Single table 
+
+Joined Table
+
+Table per concrete class
+
+We will see an example how to use @MappedSuper class
+
+
+Composition
+
+@ONe to one
+@OneTOMany
+@ManyToMany
+
+
+
+
+
+
 
 
 

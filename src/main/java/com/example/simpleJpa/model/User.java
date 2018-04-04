@@ -8,7 +8,9 @@ import java.io.Serializable;
 @Entity
 @Table(name = "test_user")
 @Data
-@NamedQuery(name = "user.getAll", query = "SELECT u from User u")
+@NamedQueries({@NamedQuery(name = "user.getAll", query = "SELECT u from User u"),
+        @NamedQuery(name = "user.getUserById", query = "SELECT u from User u where u.id=:id")})
+
 public class User implements Serializable {
 
     @Id
